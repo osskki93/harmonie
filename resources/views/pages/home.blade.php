@@ -1,11 +1,10 @@
 <x-site-layout :title="__('site.brand.name').' | '.__('site.brand.tagline')" :description="__('site.home.paragraph_1')">
     <section class="hero" data-reveal>
-        <div class="container hero-grid">
-            <div class="hero-copy reveal-left" data-reveal>
+        <div class="container hero-grid hero-grid-minimal">
+            <div class="hero-copy hero-copy-minimal reveal-left" data-reveal>
                 <p class="eyebrow">{{ __('site.brand.subtitle') }}</p>
                 <h1>{{ __('site.home.headline') }}</h1>
-                <p>{{ __('site.home.paragraph_1') }}</p>
-                <p>{{ __('site.home.paragraph_2') }}</p>
+
                 <div class="hero-actions">
                     <a href="https://wa.me/41772571313" target="_blank" rel="noopener noreferrer" class="btn-primary">
                         <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" width="18" height="18" fill="currentColor">
@@ -15,23 +14,25 @@
                     </a>
                     <a href="{{ route('services') }}" class="btn-secondary">{{ __('site.home.cta_secondary') }}</a>
                 </div>
+
+                <a href="#home-highlights" class="scroll-cue">Scroll ↓</a>
             </div>
         </div>
     </section>
 
-    <section class="feature-band" data-reveal>
-        <div class="container feature-grid">
-            <article class="feature-card" data-reveal>
+    <section class="feature-band" id="home-highlights" data-reveal>
+        <div class="container feature-grid feature-grid-minimal">
+            <article class="feature-card media-card" data-reveal>
+                <img src="{{ asset('images/soft_liner_1.png') }}" alt="Soft liner" loading="lazy">
+                <h2>Soft Liner</h2>
+            </article>
+            <article class="feature-card media-card" data-reveal>
+                <img src="{{ asset('images/eyeliner_classic_1.png') }}" alt="Eyeliner classic" loading="lazy">
+                <h2>Eyeliner Classic</h2>
+            </article>
+            <article class="feature-card media-card" data-reveal>
+                <img src="{{ asset('images/logo.jpg') }}" alt="Harmonie" loading="lazy">
                 <h2>{{ __('site.features.natural_result_title') }}</h2>
-                <p>{{ __('site.features.natural_result_text') }}</p>
-            </article>
-            <article class="feature-card" data-reveal>
-                <h2>{{ __('site.features.safety_first_title') }}</h2>
-                <p>{{ __('site.features.safety_first_text') }}</p>
-            </article>
-            <article class="feature-card" data-reveal>
-                <h2>{{ __('site.features.personal_guidance_title') }}</h2>
-                <p>{{ __('site.features.personal_guidance_text') }}</p>
             </article>
         </div>
     </section>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html lang="en">
     <head>
         @php
             $pageTitle = $title ?? __('site.meta.site_name');
@@ -19,7 +19,7 @@
 
         <meta property="og:type" content="website">
         <meta property="og:site_name" content="{{ __('site.meta.site_name') }}">
-        <meta property="og:locale" content="{{ app()->getLocale() === 'de_CH' ? 'de_CH' : 'en_GB' }}">
+        <meta property="og:locale" content="en_GB">
         <meta property="og:title" content="{{ $pageTitle }}">
         <meta property="og:description" content="{{ $pageDescription }}">
         <meta property="og:url" content="{{ $canonicalUrl }}">

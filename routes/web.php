@@ -3,15 +3,15 @@
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('pages.home');
+    return view('mobile.main');
 })->name('home');
 
 Route::get('/services', function () {
-    return view('pages.services');
+    return view('mobile.services');
 })->name('services');
 
 Route::get('/about', function () {
-    return view('pages.about');
+    return view('mobile.about');
 })->name('about');
 
 Route::get('/sitemap.xml', function () {
@@ -34,7 +34,7 @@ Route::get('/sitemap.xml', function () {
 })->name('sitemap');
 
 Route::get('/language/{locale}', function (string $locale) {
-    abort_unless(in_array($locale, ['de_CH', 'en'], true), 404);
+    abort_unless(in_array($locale, ['de_CH', 'de', 'en', 'es', 'it'], true), 404);
 
     session(['locale' => $locale]);
 
