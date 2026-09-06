@@ -176,6 +176,8 @@ return [
     'mobile' => [
         'open_menu' => 'Menu oeffnen',
         'menu_label' => 'Mobiles Menu',
+        'service_navigation' => 'Behandlungsnavigation',
+        'service_position' => 'Position der Behandlung :position',
         'contact_links' => 'Kontaktlinks',
         'whatsapp_label' => 'WhatsApp +41 (0) 77 257 13 13',
         'instagram_label' => 'Instagram',

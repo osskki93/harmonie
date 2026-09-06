@@ -3,8 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-    <meta name="theme-color" content="#f6efe2">
-    <title>{{ __('site.brand.name') }}</title>
+    <title>{{ __('site.nav.about') }} - {{ __('site.brand.name') }}</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&display=swap');
 
@@ -25,6 +24,7 @@
             min-height: 100svh;
             position: relative;
             background: #f6efe2;
+            overflow-x: hidden;
         }
 
         body::before {
@@ -40,40 +40,40 @@
             z-index: -1;
         }
 
-        .mobile-main {
+        .about-main {
             min-height: 100svh;
-            padding: calc(16px + env(safe-area-inset-top)) 16px calc(16px + env(safe-area-inset-bottom));
+            padding: calc(16px + env(safe-area-inset-top)) 16px calc(20px + env(safe-area-inset-bottom));
             display: flex;
             flex-direction: column;
         }
 
-        .mobile-topbar {
-            display: flex;
-            align-items: flex-start;
-            justify-content: space-between;
+        .about-topbar {
+            display: grid;
+            grid-template-columns: 48px 1fr 48px;
+            align-items: start;
             gap: 12px;
-        }
-
-        .mobile-topbar-spacer {
-            width: 48px;
-            height: 48px;
-        }
-
-        .expanded {
-            flex: 1;
-            min-height: 0;
-        }
-
-        .brand {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
         }
 
         .brand-logo {
             width: 48px;
             height: auto;
             display: block;
+        }
+
+        .about-title-wrap {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 48px;
+        }
+
+        .about-title {
+            margin: 0;
+            font-size: 38px;
+            line-height: 1;
+            letter-spacing: 0.02em;
+            font-weight: 600;
+            text-align: center;
         }
 
         .menu-toggle {
@@ -145,58 +145,52 @@
             outline: none;
         }
 
-        .brand-name {
-            margin-top: 32px;
-            font-size: 40px;
-            line-height: 1;
-            color: #532514;
-            align-self: center;
-            text-align: center;
-            letter-spacing: 0.2em;
-        }
-
-        .headline-wrap {
+        .about-card-wrap {
+            flex: 1;
             display: flex;
             align-items: center;
             justify-content: center;
+            padding: 18px 0 8px;
         }
 
-        .headline {
-            margin: 0;
-            font-size: 40px;
-            line-height: 1.08;
-            font-weight: 500;
-            color: #532514;
+        .about-card {
+            width: min(100%, 460px);
+            border-radius: 26px;
+            padding: 20px 18px;
+            background: rgba(255, 250, 243, 0.84);
+            box-shadow:
+                0 14px 34px rgba(83, 37, 20, 0.10),
+                inset 0 0 0 1px rgba(255, 250, 243, 0.24);
             text-align: center;
         }
 
-        .bottom-actions {
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-end;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .action-btn {
-            border: 0;
-            width: 60vw;
-            padding: 15px 18px;
+        .about-photo {
+            width: 104px;
+            height: 104px;
             border-radius: 999px;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 24px;
+            object-fit: cover;
+            object-position: center 26%;
+            display: block;
+            margin: 0 auto 12px;
+            border: 2px solid rgba(83, 37, 20, 0.08);
+        }
+
+        .about-name {
+            margin: 0;
+            font-size: 34px;
             font-weight: 600;
-            text-align: center;
-            text-decoration: none;
-            color: #532514;
-            background: #faf4e8;
-            cursor: pointer;
+            line-height: 1;
+        }
+
+        .about-text {
+            margin: 10px 0 0;
+            font-size: 24px;
+            line-height: 1.24;
         }
 
         .contact-actions {
-            width: 60vw;
+            width: min(60vw, 280px);
+            margin: 4px auto 0;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -231,32 +225,33 @@
 </head>
 <body>
     @php
-        $currentPage = 'home';
+        $currentPage = 'about';
     @endphp
 
-    <main class="mobile-main">
+    <main class="about-main">
         @include('components.mobile.topbar-menu', [
             'currentPage' => $currentPage,
             'menuId' => 'mobile-menu',
-            'topbarClass' => 'mobile-topbar',
+            'topbarClass' => 'about-topbar',
             'menuClass' => 'mobile-menu',
             'toggleClass' => 'menu-toggle',
+            'title' => __('site.nav.about'),
+            'titleWrapClass' => 'about-title-wrap',
+            'titleClass' => 'about-title',
         ])
 
-        <section class="expanded brand">
-            <div class="brand-name">{{ strtoupper(__('site.brand.name')) }}</div>
+        <section class="about-card-wrap">
+            <article class="about-card" aria-label="{{ __('site.about.mobile_card_label') }}">
+                <img class="about-photo" src="{{ asset('images/me.png') }}" alt="Maria" loading="lazy">
+                <h2 class="about-name">Maria</h2>
+                <p class="about-text">{{ __('site.about.intro') }}</p>
+                <p class="about-text">{{ __('site.about.mobile_text') }}</p>
+            </article>
         </section>
 
-        <section class="expanded headline-wrap">
-            <h1 class="headline">{{ __('site.home.headline_mobile') }}</h1>
-        </section>
-
-        <section class="expanded bottom-actions">
-            <a class="action-btn" href="{{ route('services') }}">{{ __('site.nav.services') }}</a>
-            @include('components.mobile.contact-links', [
-                'wrapperClass' => 'contact-actions',
-            ])
-        </section>
+        @include('components.mobile.contact-links', [
+            'wrapperClass' => 'contact-actions',
+        ])
     </main>
 
     <script>

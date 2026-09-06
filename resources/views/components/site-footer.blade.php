@@ -19,7 +19,7 @@
                 <span class="sr-only">{{ __('site.contact.phone_label') }}</span>
             </a>
             <a
-                href="https://instagram.com/mariallop_pmuzurich"
+                href="https://instagram.com/mariallop__pmuzurich"
                 target="_blank"
                 rel="noopener noreferrer"
                 class="contact-action"

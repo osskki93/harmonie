@@ -176,6 +176,8 @@ return [
     'mobile' => [
         'open_menu' => 'Open menu',
         'menu_label' => 'Mobile menu',
+        'service_navigation' => 'Service navigation',
+        'service_position' => 'Service position :position',
         'contact_links' => 'Contact links',
         'whatsapp_label' => 'WhatsApp +41 (0) 77 257 13 13',
         'instagram_label' => 'Instagram',

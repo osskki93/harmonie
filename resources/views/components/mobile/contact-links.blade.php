@@ -9,7 +9,7 @@
         </svg>
     </a>
 
-    <a class="contact-icon-btn" href="https://instagram.com/mariallop_pmuzurich" aria-label="{{ __('site.mobile.instagram_label') }}" target="_blank" rel="noopener noreferrer">
+    <a class="contact-icon-btn" href="https://instagram.com/mariallop__pmuzurich" aria-label="{{ __('site.mobile.instagram_label') }}" target="_blank" rel="noopener noreferrer">
         <svg class="contact-icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
             <rect x="3" y="3" width="18" height="18" rx="5" ry="5"/>
             <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37Z"/>

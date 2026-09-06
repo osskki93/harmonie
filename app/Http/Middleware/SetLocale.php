@@ -24,7 +24,21 @@ class SetLocale
         }
 
         App::setLocale($locale);
+        $request->attributes->set('device', $this->isTablet($request) ? 'tablet' : 'mobile');
 
         return $next($request);
+    }
+
+    private function isTablet(Request $request): bool
+    {
+        if ($request->query('device') === 'tablet') {
+            return true;
+        }
+
+        $userAgent = strtolower($request->userAgent() ?? '');
+
+        return str_contains($userAgent, 'ipad')
+            || str_contains($userAgent, 'tablet')
+            || (str_contains($userAgent, 'android') && ! str_contains($userAgent, 'mobile'));
     }
 }

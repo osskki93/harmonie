@@ -69,6 +69,8 @@ return [
     'mobile' => [
         'open_menu' => 'Apri menu',
         'menu_label' => 'Menu mobile',
+        'service_navigation' => 'Navigazione dei servizi',
+        'service_position' => 'Posizione del servizio :position',
         'contact_links' => 'Link di contatto',
         'whatsapp_label' => 'WhatsApp +41 (0) 77 257 13 13',
         'instagram_label' => 'Instagram',

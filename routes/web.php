@@ -2,16 +2,22 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('mobile.main');
+$viewForDevice = static function (string $page): string {
+    $device = request()->attributes->get('device', 'mobile');
+
+    return $device.'.'.$page;
+};
+
+Route::get('/', function () use ($viewForDevice) {
+    return view($viewForDevice('main'));
 })->name('home');
 
-Route::get('/services', function () {
-    return view('mobile.services');
+Route::get('/services', function () use ($viewForDevice) {
+    return view($viewForDevice('services'));
 })->name('services');
 
-Route::get('/about', function () {
-    return view('mobile.about');
+Route::get('/about', function () use ($viewForDevice) {
+    return view($viewForDevice('about'));
 })->name('about');
 
 Route::get('/sitemap.xml', function () {
@@ -34,7 +40,7 @@ Route::get('/sitemap.xml', function () {
 })->name('sitemap');
 
 Route::get('/language/{locale}', function (string $locale) {
-    abort_unless(in_array($locale, ['de_CH', 'de', 'en', 'es', 'it'], true), 404);
+    abort_unless(in_array($locale, ['de', 'en', 'es', 'it'], true), 404);
 
     session(['locale' => $locale]);
 
