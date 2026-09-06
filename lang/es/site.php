@@ -32,7 +32,7 @@ return [
             'title' => 'Consulta y diseño',
             'aria_label' => 'Servicio de consulta y diseño',
             'alt' => 'Consulta y diseño',
-            'text' => 'Entiendo perfectamente que la micropigmentación no es solo otro servicio de belleza. Es una decisión personal, y sentirte segura con ello es importante. También, si necesitamos trabajar el diseño o ver las posibilidades de color, podemos hacerlo.\n\nJuntas nos tomaremos el tiempo necesario para ver si este proceso es realmente el adecuado para ti. Y si decides que no lo es, o si yo siento que tus expectativas no se van a poder cumplir del todo, no hay ningún compromiso. Tu comodidad y tu confianza siempre son lo primero.',
+            'text' => 'Entiendo perfectamente que la micropigmentación no es solo otro servicio de belleza. Es una decisión personal, y sentirte segura con ello es importante. También, si necesitamos trabajar el diseño o ver las posibilidades de color, podemos hacerlo.'.PHP_EOL.PHP_EOL.'Juntas nos tomaremos el tiempo necesario para ver si este proceso es realmente el adecuado para ti. Y si decides que no lo es, o si yo siento que tus expectativas no se van a poder cumplir del todo, no hay ningún compromiso. Tu comodidad y tu confianza siempre son lo primero.',
         ],
         'list' => [
             [

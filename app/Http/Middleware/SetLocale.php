@@ -16,11 +16,11 @@ class SetLocale
      */
     public function handle(Request $request, Closure $next): Response
     {
-        $supportedLocales = ['en', 'de_CH', 'de', 'es', 'it'];
+        $supportedLocales = ['en', 'de', 'es', 'it'];
         $locale = session('locale', config('app.locale'));
 
         if (! in_array($locale, $supportedLocales, true)) {
-            $locale = config('app.fallback_locale', 'en');
+            $locale = config('app.fallback_locale', 'de');
         }
 
         App::setLocale($locale);

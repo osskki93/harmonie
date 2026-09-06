@@ -106,7 +106,7 @@ return [
             'title' => 'Beratung & Design',
             'aria_label' => 'Beratung und Design',
             'alt' => 'Beratung und Design',
-            'text' => 'Ich verstehe vollkommen, dass Mikropigmentierung nicht einfach nur eine weitere Schoenheitsbehandlung ist. Es ist eine persoenliche Entscheidung, und wichtig ist, dass du dich dabei sicher fuehlst. Auch wenn wir das Design ausarbeiten oder die Farbmoeglichkeiten ansehen muessen, koennen wir das gerne gemeinsam machen.\n\nZusammen nehmen wir uns die Zeit zu schauen, ob dieser Prozess wirklich das Richtige fuer dich ist. Und wenn du dich dagegen entscheidest oder ich das Gefuehl habe, dass deine Erwartungen nicht vollstaendig erreicht werden koennen, gibt es absolut keine Verpflichtung. Dein Wohlgefuehl und dein Vertrauen stehen immer an erster Stelle.',
+            'text' => 'Ich verstehe vollkommen, dass Mikropigmentierung nicht einfach nur eine weitere Schoenheitsbehandlung ist. Es ist eine persoenliche Entscheidung, und wichtig ist, dass du dich dabei sicher fuehlst. Auch wenn wir das Design ausarbeiten oder die Farbmoeglichkeiten ansehen muessen, koennen wir das gerne gemeinsam machen.'.PHP_EOL.PHP_EOL.'Zusammen nehmen wir uns die Zeit zu schauen, ob dieser Prozess wirklich das Richtige fuer dich ist. Und wenn du dich dagegen entscheidest oder ich das Gefuehl habe, dass deine Erwartungen nicht vollstaendig erreicht werden koennen, gibt es absolut keine Verpflichtung. Dein Wohlgefuehl und dein Vertrauen stehen immer an erster Stelle.',
         ],
         'list' => [
             [

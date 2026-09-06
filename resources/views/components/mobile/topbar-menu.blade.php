@@ -9,11 +9,10 @@
     $titleClass = $titleClass ?? '';
     $currentLocale = app()->getLocale();
     $languageLinks = [
-        'en' => 'English',
         'de' => 'Deutsch',
+        'en' => 'English',
         'es' => 'Español',
         'it' => 'Italiano',
-        'de_CH' => 'Deutsch (CH)',
     ];
 @endphp
 

@@ -153,6 +153,7 @@
             color: #532514;
             align-self: center;
             text-align: center;
+            letter-spacing: 0.2em;
         }
 
         .headline-wrap {
@@ -244,7 +245,7 @@
         ])
 
         <section class="expanded brand">
-            <div class="brand-name">{{ __('site.brand.name') }}</div>
+            <div class="brand-name">{{ strtoupper(__('site.brand.name')) }}</div>
         </section>
 
         <section class="expanded headline-wrap">

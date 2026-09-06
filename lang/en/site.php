@@ -106,7 +106,7 @@ return [
             'title' => 'Consultation & Design',
             'aria_label' => 'Consultation and design service',
             'alt' => 'Consultation and Design',
-            'text' => 'I completely understand that micropigmentation is not just another beauty service. It is a personal decision, and feeling confident about it is important. Also, if we need to work on the design or see the colour possibilities, we can do that.\n\nTogether, we will take the time to see if this process is truly right for you. And if you decide it is not, or if I feel that your expectations may not be fully achieved, there is absolutely no commitment. Your comfort and confidence always come first.',
+            'text' => 'I completely understand that micropigmentation is not just another beauty service. It is a personal decision, and feeling confident about it is important. Also, if we need to work on the design or see the colour possibilities, we can do that.'.PHP_EOL.PHP_EOL.'Together, we will take the time to see if this process is truly right for you. And if you decide it is not, or if I feel that your expectations may not be fully achieved, there is absolutely no commitment. Your comfort and confidence always come first.',
         ],
         'list' => [
             [
