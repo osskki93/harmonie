@@ -453,6 +453,357 @@
             }
         }
 
+        @media (min-width: 1024px) and (orientation: landscape) {
+            body {
+                overflow: hidden;
+            }
+
+            .tablet-home {
+                width: min(100%, 1440px);
+                height: 100svh;
+                min-height: 0;
+                margin: 0 auto;
+                padding: 22px clamp(44px, 6vw, 110px) 20px;
+                grid-template-rows: auto auto auto minmax(0, 1fr) auto auto;
+                gap: clamp(8px, 1.1vh, 16px);
+            }
+
+            .tablet-home .mobile-topbar {
+                min-height: 52px;
+            }
+
+            .tablet-home .brand-logo {
+                width: 56px;
+            }
+
+            .tablet-home .language-toggle {
+                width: 50px;
+                height: 50px;
+            }
+
+            .tablet-home .language-toggle-icon {
+                width: 24px;
+                height: 24px;
+            }
+
+            .tablet-home .brand-name {
+                font-size: clamp(48px, 5vw, 78px);
+                letter-spacing: 0.38em;
+                text-indent: 0.38em;
+            }
+
+            .tablet-home .headline {
+                max-width: 900px;
+                font-size: clamp(36px, 4vw, 62px);
+                letter-spacing: 0.1em;
+            }
+
+            .tablet-services-grid {
+                width: min(100%, 1120px);
+                gap: 14px;
+            }
+
+            .tablet-service-tab {
+                min-height: clamp(82px, 13vh, 122px);
+            }
+
+            .tablet-service-tab:last-child {
+                min-height: clamp(64px, 9vh, 92px);
+            }
+
+            .tablet-service-tab span {
+                font-size: clamp(20px, 2vw, 30px);
+            }
+
+            .tablet-about-panel {
+                width: 60%;
+                max-width: 720px;
+                min-height: clamp(92px, 13vh, 122px);
+                gap: 18px;
+                padding: 12px 22px;
+            }
+
+            .tablet-about-photo {
+                width: 68px;
+                height: 68px;
+            }
+
+            .tablet-about-title {
+                font-size: clamp(21px, 2vw, 28px);
+            }
+
+            .tablet-about-text {
+                font-size: clamp(16px, 1.5vw, 20px);
+            }
+
+            .tablet-home .tablet-contact-actions {
+                gap: 34px;
+            }
+
+            .tablet-home .tablet-contact-actions .contact-icon-btn {
+                width: 64px;
+                height: 64px;
+            }
+        }
+
+        .computer-home {
+            width: min(100% - 96px, 1480px);
+            height: 100svh;
+            min-height: 0;
+            margin: 0 auto;
+            padding: 28px 0 24px;
+            display: grid;
+            grid-template-rows: auto minmax(0, 1fr);
+            gap: 24px;
+        }
+
+        .computer-home .mobile-topbar {
+            min-height: 52px;
+        }
+
+        .computer-home .brand-logo {
+            width: 58px;
+        }
+
+        .computer-home .language-toggle {
+            width: 50px;
+            height: 50px;
+        }
+
+        .computer-home .language-toggle-icon {
+            width: 24px;
+            height: 24px;
+        }
+
+        .computer-triptych {
+            min-height: 0;
+            display: grid;
+            grid-template-columns: minmax(230px, 0.78fr) minmax(440px, 1.44fr) minmax(230px, 0.78fr);
+            align-items: stretch;
+            gap: 0;
+        }
+
+        .computer-hero {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            min-width: 0;
+            padding: 0 clamp(28px, 3vw, 54px) 0 0;
+            border-right: 1px solid rgba(83, 37, 20, 0.15);
+        }
+
+        .computer-home .brand-name {
+            margin: 0;
+            align-self: flex-start;
+            font-size: clamp(58px, 6vw, 104px);
+            line-height: 0.9;
+            letter-spacing: 0.22em;
+            text-indent: 0.22em;
+            text-align: left;
+        }
+
+        .computer-home .headline-wrap {
+            display: block;
+            margin-top: clamp(26px, 4vh, 54px);
+        }
+
+        .computer-home .headline {
+            max-width: 560px;
+            font-size: clamp(42px, 4.2vw, 72px);
+            line-height: 0.98;
+            letter-spacing: 0.04em;
+            text-align: left;
+        }
+
+        .computer-services {
+            min-width: 0;
+            display: flex;
+            align-items: center;
+            padding: 0 clamp(28px, 3vw, 54px);
+        }
+
+        .computer-services .tablet-services-grid {
+            width: 100%;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 18px;
+        }
+
+        .computer-services .tablet-service-tab {
+            min-height: clamp(142px, 20vh, 220px);
+            border-radius: 22px;
+        }
+
+        .computer-services .tablet-service-tab:last-child {
+            min-height: clamp(96px, 13vh, 140px);
+        }
+
+        .computer-services .tablet-service-tab span {
+            right: 20px;
+            bottom: 18px;
+            left: 20px;
+            font-size: clamp(24px, 2.2vw, 38px);
+        }
+
+        .computer-aside {
+            min-width: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 26px;
+            padding: 0 0 0 clamp(28px, 3vw, 54px);
+            border-left: 1px solid rgba(83, 37, 20, 0.15);
+        }
+
+        .computer-about-panel {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 14px;
+            min-width: 0;
+            text-align: center;
+        }
+
+        .computer-about-panel .tablet-about-photo {
+            width: 68px;
+            height: 68px;
+            flex: 0 0 auto;
+        }
+
+        .computer-about-panel .tablet-about-title {
+            font-size: 28px;
+        }
+
+        .computer-about-panel .tablet-about-text {
+            max-width: 300px;
+            font-size: 19px;
+            line-height: 1.18;
+        }
+
+        .computer-home .tablet-home-contacts {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+
+        .computer-home .tablet-contact-actions {
+            width: auto;
+            gap: 24px;
+        }
+
+        .computer-home .tablet-contact-actions .contact-icon-btn {
+            width: 62px;
+            height: 62px;
+        }
+
+        @media (max-width: 1180px) {
+            .computer-home {
+                width: min(100% - 56px, 1100px);
+            }
+
+            .computer-triptych {
+                grid-template-columns: minmax(190px, 0.72fr) minmax(380px, 1.56fr) minmax(190px, 0.72fr);
+            }
+
+            .computer-home .brand-name {
+                font-size: 54px;
+            }
+        }
+
+        @media (min-width: 1024px) and (orientation: landscape) {
+            .computer-home {
+                width: 100%;
+                padding: 22px 24px 20px;
+            }
+
+            .computer-triptych {
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+            }
+
+            .computer-services {
+                grid-column: 1;
+                grid-row: 1;
+                padding: 0 24px 0 0;
+                border-right: 1px solid rgba(83, 37, 20, 0.15);
+            }
+
+            .computer-hero {
+                grid-column: 2;
+                grid-row: 1;
+                align-items: center;
+                padding: 0 24px;
+                border-right: 0;
+            }
+
+            .computer-hero .brand-name,
+            .computer-hero .headline {
+                align-self: center;
+                text-align: center;
+            }
+
+            .computer-aside {
+                grid-column: 3;
+                grid-row: 1;
+                padding-left: 24px;
+            }
+
+            .computer-home .brand-name {
+                font-size: clamp(42px, 4.2vw, 68px);
+                letter-spacing: 0.16em;
+                text-indent: 0.16em;
+            }
+
+            .computer-home .headline {
+                max-width: 360px;
+                font-size: clamp(34px, 3.2vw, 54px);
+                letter-spacing: 0.02em;
+            }
+
+            .computer-home .headline-wrap {
+                margin-top: clamp(76px, 10vh, 132px);
+            }
+
+            .computer-services .tablet-services-grid {
+                grid-template-columns: 1fr;
+                width: 82%;
+                gap: 26px;
+            }
+
+            .computer-services .tablet-service-tab {
+                min-height: clamp(96px, 12.5vh, 136px);
+                border-radius: 18px;
+            }
+
+            .computer-services .tablet-service-tab:last-child {
+                grid-column: auto;
+                min-height: clamp(96px, 12.5vh, 136px);
+            }
+
+            .computer-services .tablet-service-tab span {
+                right: 14px;
+                bottom: 13px;
+                left: 14px;
+                font-size: clamp(18px, 1.5vw, 25px);
+            }
+
+            .computer-about-panel .tablet-about-photo {
+                width: clamp(108px, 9vw, 142px);
+                height: clamp(108px, 9vw, 142px);
+            }
+
+            .computer-about-panel .tablet-about-title {
+                font-size: clamp(28px, 2.5vw, 38px);
+            }
+
+            .computer-about-panel .tablet-about-text {
+                max-width: 360px;
+                font-size: clamp(20px, 1.7vw, 26px);
+                line-height: 1.2;
+            }
+        }
+
         .tablet-service-dialog {
             width: min(680px, calc(100vw - 80px));
             max-height: calc(100svh - 48px);
@@ -557,7 +908,7 @@
         ];
     @endphp
 
-    <main class="mobile-main tablet-home">
+    <main class="mobile-main tablet-home computer-home">
         @include('components.mobile.topbar-menu', [
             'currentPage' => $currentPage,
             'menuId' => 'mobile-menu',
@@ -567,39 +918,45 @@
             'languageOnly' => true,
         ])
 
-        <section class="brand">
-            <div class="brand-name">{{ strtoupper(__('site.brand.name')) }}</div>
-        </section>
+        <div class="computer-triptych">
+            <section class="computer-hero">
+                <div class="brand">
+                    <div class="brand-name">{{ strtoupper(__('site.brand.name')) }}</div>
+                </div>
 
-        <section class="headline-wrap">
-            <h1 class="headline">{{ __('site.home.headline_mobile') }}</h1>
-        </section>
+                <div class="headline-wrap">
+                    <h1 class="headline">{{ __('site.home.headline_mobile') }}</h1>
+                </div>
+            </section>
 
-        <section class="tablet-services" aria-label="{{ __('site.services.title') }}">
-            <div class="tablet-services-grid">
-                @foreach($tabletServices as $service)
-                    <button type="button" class="tablet-service-tab" data-service-name="{{ $service['name'] }}" data-service-price="{{ $service['price'] }}" data-service-text="{{ $service['text'] }}" aria-label="{{ $service['name'] }}">
-                        <img src="{{ asset('images/'.$service['image']) }}" alt="{{ $service['name'] }}" loading="lazy">
-                        <span>{{ $service['name'] }}</span>
-                    </button>
-                @endforeach
-            </div>
-        </section>
+            <section class="tablet-services computer-services" aria-label="{{ __('site.services.title') }}">
+                <div class="tablet-services-grid">
+                    @foreach($tabletServices as $service)
+                        <button type="button" class="tablet-service-tab" data-service-name="{{ $service['name'] }}" data-service-price="{{ $service['price'] }}" data-service-text="{{ $service['text'] }}" aria-label="{{ $service['name'] }}">
+                            <img src="{{ asset('images/'.$service['image']) }}" alt="{{ $service['name'] }}" loading="lazy">
+                            <span>{{ $service['name'] }}</span>
+                        </button>
+                    @endforeach
+                </div>
+            </section>
 
-        <section class="tablet-about-panel" aria-label="{{ __('site.about.mobile_card_label') }}">
-            <img class="tablet-about-photo" src="{{ asset('images/me.png') }}" alt="Maria" loading="lazy">
-            <div class="tablet-about-copy">
-                <h2 class="tablet-about-title">{{ __('site.nav.about') }}</h2>
-                <p class="tablet-about-text">{{ __('site.about.intro') }}</p>
-                <p class="tablet-about-text">{{ __('site.about.mobile_text') }}</p>
-            </div>
-        </section>
+            <aside class="computer-aside">
+                <section class="computer-about-panel" aria-label="{{ __('site.about.mobile_card_label') }}">
+                <img class="tablet-about-photo" src="{{ asset('images/me.png') }}" alt="Maria" loading="lazy">
+                <div class="tablet-about-copy">
+                    <h2 class="tablet-about-title">{{ __('site.nav.about') }}</h2>
+                    <p class="tablet-about-text">{{ __('site.about.intro') }}</p>
+                    <p class="tablet-about-text">{{ __('site.about.mobile_text') }}</p>
+                </div>
+                </section>
 
-        <section class="tablet-home-contacts">
-            @include('components.mobile.contact-links', [
-                'wrapperClass' => 'tablet-contact-actions',
-            ])
-        </section>
+                <section class="tablet-home-contacts">
+                    @include('components.mobile.contact-links', [
+                        'wrapperClass' => 'tablet-contact-actions',
+                    ])
+                </section>
+            </aside>
+        </div>
     </main>
 
     <dialog class="tablet-service-dialog" data-service-dialog>
