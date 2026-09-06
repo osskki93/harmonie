@@ -41,6 +41,14 @@ class SetLocale
             || str_contains($userAgent, 'tablet')
             || (str_contains($userAgent, 'android') && ! str_contains($userAgent, 'mobile'));
 
-        return $isTablet ? 'tablet' : 'computer';
+        if ($isTablet) {
+            return 'tablet';
+        }
+
+        return str_contains($userAgent, 'mobile')
+            || str_contains($userAgent, 'iphone')
+            || str_contains($userAgent, 'ipod')
+            ? 'mobile'
+            : 'computer';
     }
 }
