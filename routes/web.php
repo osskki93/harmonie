@@ -20,11 +20,16 @@ Route::get('/about', function () use ($viewForDevice) {
     return view($viewForDevice('about'));
 })->name('about');
 
+Route::get('/location', function () use ($viewForDevice) {
+    return view($viewForDevice('location'));
+})->name('location');
+
 Route::get('/sitemap.xml', function () {
     $urls = [
         route('home'),
         route('services'),
         route('about'),
+        route('location'),
     ];
 
     $xml = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n";

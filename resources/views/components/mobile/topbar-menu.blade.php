@@ -77,6 +77,7 @@
         <a href="{{ route('home') }}" data-menu-link data-menu-target="home">{{ __('site.nav.home') }}</a>
         <a href="{{ route('services') }}" data-menu-link data-menu-target="services">{{ __('site.nav.services') }}</a>
         <a href="{{ route('about') }}" data-menu-link data-menu-target="about">{{ __('site.nav.about') }}</a>
+        <a href="{{ route('location') }}" data-menu-link data-menu-target="location">{{ __('site.nav.location') }}</a>
     @endunless
 
     <div class="mobile-menu-language">

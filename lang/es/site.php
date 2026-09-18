@@ -12,6 +12,7 @@ return [
         'home' => 'Inicio',
         'services' => 'Servicios',
         'about' => 'Sobre mí',
+        'location' => 'Ubicación',
         'language' => 'Idioma',
     ],
 
@@ -76,5 +77,14 @@ return [
         'instagram_label' => 'Instagram',
         'email_label' => 'Correo electrónico',
         'close' => 'Cerrar',
+    ],
+
+    'location' => [
+        'heading' => 'Dónde encontrarme',
+        'address' => 'Bleicherweg 64a, 8002 Zürich',
+        'appointment_text' => 'Es necesario pedir cita previa para garantizar una atención completamente personalizada y poder dedicarte el tiempo que necesitas.',
+        'map_label' => 'Abrir en Google Maps',
+        'map_url' => 'https://www.google.com/maps/search/?api=1&query=Bleicherweg+64a%2C+8002+Z%C3%BCrich',
+        'card_label' => 'Información sobre ubicación y citas',
     ],
 ];

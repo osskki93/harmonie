@@ -18,6 +18,7 @@ return [
         'services' => 'Services',
         'contact' => 'Contact',
         'about' => 'About me',
+        'location' => 'Location',
         'book' => 'Book now',
         'language' => 'Language',
     ],
@@ -165,6 +166,15 @@ return [
         'bar_phone' => 'Call',
         'bar_instagram' => 'Instagram',
         'bar_email' => 'Email',
+    ],
+
+    'location' => [
+        'heading' => 'Where to find me',
+        'address' => 'Bleicherweg 64a, 8002 Zürich',
+        'appointment_text' => 'Appointments are required to ensure that I can give you my full attention and provide the best possible care.',
+        'map_label' => 'Open in Google Maps',
+        'map_url' => 'https://www.google.com/maps/search/?api=1&query=Bleicherweg+64a%2C+8002+Z%C3%BCrich',
+        'card_label' => 'Location and appointment information',
     ],
 
     'actions' => [

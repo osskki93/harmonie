@@ -18,6 +18,7 @@ return [
         'services' => 'Behandlungen',
         'contact' => 'Kontakt',
         'about' => 'Uber mich',
+        'location' => 'Standort',
         'book' => 'Termin vereinbaren',
         'language' => 'Sprache',
     ],
@@ -165,6 +166,15 @@ return [
         'bar_phone' => 'Anrufen',
         'bar_instagram' => 'Instagram',
         'bar_email' => 'E-Mail',
+    ],
+
+    'location' => [
+        'heading' => 'Wo du mich findest',
+        'address' => 'Bleicherweg 64a, 8002 Zürich',
+        'appointment_text' => 'Termine sind erforderlich, damit ich dir meine volle Aufmerksamkeit und die bestmögliche Betreuung bieten kann.',
+        'map_label' => 'In Google Maps öffnen',
+        'map_url' => 'https://www.google.com/maps/search/?api=1&query=Bleicherweg+64a%2C+8002+Z%C3%BCrich',
+        'card_label' => 'Standort und Termin informationen',
     ],
 
     'actions' => [
