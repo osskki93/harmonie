@@ -514,7 +514,8 @@
 
         .manicure-btn-back {
             align-self: center;
-            margin-top: 16px;
+            margin-top: auto;
+            margin-bottom: 8px;
             border: 0;
             border-radius: 999px;
             padding: 8px 14px;
