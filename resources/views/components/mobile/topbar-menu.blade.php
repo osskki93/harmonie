@@ -79,10 +79,9 @@
         top: 100%;
         left: 0;
         right: 0;
-        background: rgba(250, 244, 232, 0.95);
+        background: rgba(83, 37, 20, 0.15);
         border-radius: 8px;
         margin-top: 4px;
-        box-shadow: 0 4px 12px rgba(83, 37, 20, 0.1);
         z-index: 100;
         overflow: hidden;
     }
@@ -98,7 +97,7 @@
         font-size: 16px;
         font-weight: 500;
         text-decoration: none;
-        border-bottom: 1px solid rgba(83, 37, 20, 0.08);
+        border-bottom: none;
         opacity: 0.85;
         transition: all 0.15s ease;
     }
@@ -109,12 +108,12 @@
 
     .language-dropdown-menu a:active {
         opacity: 1;
-        background: rgba(83, 37, 20, 0.08);
+        background: transparent;
     }
 
     .language-dropdown-menu a.is-active {
         opacity: 1;
-        background: rgba(83, 37, 20, 0.12);
+        background: transparent;
         font-weight: 600;
     }
 
