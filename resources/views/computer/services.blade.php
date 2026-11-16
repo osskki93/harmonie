@@ -545,6 +545,120 @@
             .service-dialog-inner {
                 padding: 34px 42px;
             }
+
+            .manicure-dialog-container {
+                display: flex;
+                flex-direction: column;
+                height: 100%;
+            }
+
+            .manicure-dialog-view {
+                display: none;
+                flex: 1;
+                overflow-y: auto;
+            }
+
+            .manicure-dialog-view.active {
+                display: block;
+            }
+
+            .manicure-view-description {
+                padding-right: 8px;
+            }
+
+            .manicure-prices-grid {
+                display: grid;
+                gap: 16px;
+                margin-top: 16px;
+            }
+
+            .manicure-price-category {
+                border-top: 1px solid #d4c5b9;
+                padding-top: 12px;
+            }
+
+            .manicure-price-category:first-child {
+                border-top: none;
+                padding-top: 0;
+            }
+
+            .manicure-category-title {
+                font-weight: 600;
+                font-size: 18px;
+                margin: 0 0 8px 0;
+                color: #532514;
+            }
+
+            .manicure-price-item {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 6px 0;
+                font-size: 18px;
+                line-height: 1.3;
+            }
+
+            .manicure-price-label {
+                flex: 1;
+                text-align: left;
+            }
+
+            .manicure-price-value {
+                font-weight: 600;
+                white-space: nowrap;
+                margin-left: 12px;
+            }
+
+            .manicure-btn-prices {
+                margin-top: 16px;
+                width: fit-content;
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+                border: 0;
+                border-radius: 999px;
+                padding: 8px 14px;
+                background: transparent;
+                color: #532514;
+                font-family: inherit;
+                font-size: 18px;
+                font-weight: 600;
+                text-decoration: underline;
+                text-decoration-thickness: 1px;
+                text-underline-offset: 4px;
+                outline: none;
+                box-shadow: none;
+                -webkit-tap-highlight-color: transparent;
+                cursor: pointer;
+            }
+
+            .manicure-btn-prices:active {
+                opacity: 0.7;
+            }
+
+            .manicure-btn-back {
+                align-self: center;
+                margin-top: 16px;
+                border: 0;
+                border-radius: 999px;
+                padding: 8px 14px;
+                background: transparent;
+                color: #532514;
+                font-family: inherit;
+                font-size: 18px;
+                font-weight: 600;
+                text-decoration: underline;
+                text-decoration-thickness: 1px;
+                text-underline-offset: 4px;
+                outline: none;
+                box-shadow: none;
+                -webkit-tap-highlight-color: transparent;
+                cursor: pointer;
+            }
+
+            .manicure-btn-back:active {
+                opacity: 0.7;
+            }
         }
     </style>
 </head>
@@ -610,6 +724,27 @@
         </div>
     </dialog>
 
+    <dialog class="service-dialog" data-manicure-dialog>
+        <div class="service-dialog-inner">
+            <div class="manicure-dialog-container">
+                <!-- Description View -->
+                <div class="manicure-dialog-view active" data-manicure-view="description">
+                    <div class="manicure-view-description">
+                        <h2 class="service-dialog-title" data-manicure-title></h2>
+                        <p class="service-dialog-text" data-manicure-description></p>
+                    </div>
+                    <button type="button" class="manicure-btn-prices" data-manicure-btn-prices>{{ __('site.services.consultation.title') === 'Consultation & Design' ? 'View Prices' : (app()->getLocale() === 'es' ? 'Ver precios' : (app()->getLocale() === 'de' ? 'Preise anzeigen' : 'Visualizza prezzi')) }}</button>
+                </div>
+
+                <!-- Prices View -->
+                <div class="manicure-dialog-view" data-manicure-view="prices">
+                    <div class="manicure-prices-grid" data-manicure-prices-container></div>
+                    <button type="button" class="manicure-btn-back" data-manicure-btn-back>{{ __('site.mobile.close') }}</button>
+                </div>
+            </div>
+        </div>
+    </dialog>
+
     <script>
         (() => {
             const dialog = document.querySelector('[data-service-dialog]');
@@ -640,7 +775,152 @@
                 tile.classList.add('is-loaded');
             };
 
+            // Manicure and Pedicure prices data
+            const manicurePricesData = {
+                en: {
+                    "MANICURE": [
+                        { label: "Basic manicure", price: "40 CHF" },
+                        { label: "Manicure with Shellac", price: "55 CHF" },
+                        { label: "Manicure with removal (Shellac) and Shellac", price: "60 CHF" }
+                    ],
+                    "PEDICURE": [
+                        { label: "Basic pedicure", price: "50 CHF" },
+                        { label: "Pedicure with Shellac", price: "65 CHF" },
+                        { label: "Pedicure with removal (Shellac) and Shellac", price: "70 CHF" }
+                    ],
+                    "ADDITIONAL SERVICES": [
+                        { label: "Other types of semipermanent", price: "+ 10 CHF" },
+                        { label: "Gel removal", price: "20 CHF" }
+                    ]
+                },
+                es: {
+                    "MANICURA": [
+                        { label: "Manicura básica", price: "40 CHF" },
+                        { label: "Manicura con Shellac", price: "55 CHF" },
+                        { label: "Manicura con remover (Shellac) y Shellac", price: "60 CHF" }
+                    ],
+                    "PEDICURA": [
+                        { label: "Pedicura básica", price: "50 CHF" },
+                        { label: "Pedicura con Shellac", price: "65 CHF" },
+                        { label: "Pedicura con remover (Shellac) y Shellac", price: "70 CHF" }
+                    ],
+                    "SERVICIOS ADICIONALES": [
+                        { label: "Otros tipos de semipermanente", price: "+ 10 CHF" },
+                        { label: "Remover gel", price: "20 CHF" }
+                    ]
+                },
+                de: {
+                    "MANIKÜRE": [
+                        { label: "Basis-Maniküre", price: "40 CHF" },
+                        { label: "Maniküre mit Shellac", price: "55 CHF" },
+                        { label: "Maniküre mit Remover (Shellac) und Shellac", price: "60 CHF" }
+                    ],
+                    "PEDIKUERE": [
+                        { label: "Basis-Pedikuere", price: "50 CHF" },
+                        { label: "Pedikuere mit Shellac", price: "65 CHF" },
+                        { label: "Pedikuere mit Remover (Shellac) und Shellac", price: "70 CHF" }
+                    ],
+                    "ZUSÄTZLICHE SERVICES": [
+                        { label: "Andere Arten von Semipermanent", price: "+ 10 CHF" },
+                        { label: "Gel-Remover", price: "20 CHF" }
+                    ]
+                },
+                it: {
+                    "MANICURE": [
+                        { label: "Manicure base", price: "40 CHF" },
+                        { label: "Manicure con Shellac", price: "55 CHF" },
+                        { label: "Manicure con remover (Shellac) e Shellac", price: "60 CHF" }
+                    ],
+                    "PEDICURE": [
+                        { label: "Pedicure base", price: "50 CHF" },
+                        { label: "Pedicure con Shellac", price: "65 CHF" },
+                        { label: "Pedicure con remover (Shellac) e Shellac", price: "70 CHF" }
+                    ],
+                    "SERVIZI AGGIUNTIVI": [
+                        { label: "Altri tipi di semipermanente", price: "+ 10 CHF" },
+                        { label: "Rimozione gel", price: "20 CHF" }
+                    ]
+                }
+            };
+
+            const manicureDialog = document.querySelector('[data-manicure-dialog]');
+            const manicureTitle = document.querySelector('[data-manicure-title]');
+            const manicureDescription = document.querySelector('[data-manicure-description]');
+            const manicurePricesContainer = document.querySelector('[data-manicure-prices-container]');
+            const manicureBtnPrices = document.querySelector('[data-manicure-btn-prices]');
+            const manicureBtnBack = document.querySelector('[data-manicure-btn-back]');
+
+            const renderPrices = (lang) => {
+                const prices = manicurePricesData[lang] || manicurePricesData.en;
+                manicurePricesContainer.innerHTML = '';
+                
+                Object.entries(prices).forEach(([category, items]) => {
+                    const categoryDiv = document.createElement('div');
+                    categoryDiv.className = 'manicure-price-category';
+                    
+                    const categoryTitle = document.createElement('h3');
+                    categoryTitle.className = 'manicure-category-title';
+                    categoryTitle.textContent = category;
+                    categoryDiv.appendChild(categoryTitle);
+                    
+                    items.forEach(item => {
+                        const itemDiv = document.createElement('div');
+                        itemDiv.className = 'manicure-price-item';
+                        itemDiv.innerHTML = `
+                            <span class="manicure-price-label">${item.label}</span>
+                            <span class="manicure-price-value">${item.price}</span>
+                        `;
+                        categoryDiv.appendChild(itemDiv);
+                    });
+                    
+                    manicurePricesContainer.appendChild(categoryDiv);
+                });
+            };
+
+            const switchManicureView = (view) => {
+                document.querySelectorAll('[data-manicure-view]').forEach(el => {
+                    el.classList.remove('active');
+                });
+                document.querySelector(`[data-manicure-view="${view}"]`).classList.add('active');
+            };
+
+            const openManicureDialog = (tile) => {
+                dialogClosing = false;
+                const lang = document.documentElement.lang || 'en';
+                
+                manicureTitle.textContent = tile.dataset.serviceName || '';
+                manicureDescription.textContent = tile.dataset.serviceText || '';
+                renderPrices(lang);
+                switchManicureView('description');
+
+                if (manicureDialog.showModal) {
+                    manicureDialog.showModal();
+                    requestAnimationFrame(() => {
+                        manicureDialog.classList.add('is-open');
+                    });
+                }
+            };
+
+            const closeManicureDialog = () => {
+                if (!manicureDialog.open) {
+                    return;
+                }
+
+                manicureDialog.classList.remove('is-open');
+                window.setTimeout(() => {
+                    if (manicureDialog.open) {
+                        manicureDialog.close();
+                    }
+                }, 260);
+            };
+
             const openDialog = (tile) => {
+                // Check if this is the Manicure and Pedicure service (index 4)
+                if (tile.dataset.serviceName && tile.dataset.serviceName.includes('Manicure') || tile.dataset.serviceName.includes('Manicura') || tile.dataset.serviceName.includes('Maniküre')) {
+                    openManicureDialog(tile);
+                    return;
+                }
+
                 dialogClosing = false;
                 dialogTitle.textContent = tile.dataset.serviceName || '';
                 dialogPrice.textContent = tile.dataset.servicePrice || '';
@@ -751,6 +1031,23 @@
                     closeDialog();
                 }
             });
+
+            // Manicure dialog event listeners
+            if (manicureBtnPrices) {
+                manicureBtnPrices.addEventListener('click', () => switchManicureView('prices'));
+            }
+
+            if (manicureBtnBack) {
+                manicureBtnBack.addEventListener('click', () => closeManicureDialog());
+            }
+
+            if (manicureDialog) {
+                manicureDialog.addEventListener('click', (event) => {
+                    if (event.target === manicureDialog) {
+                        closeManicureDialog();
+                    }
+                });
+            }
         })();
     </script>
 </body>
