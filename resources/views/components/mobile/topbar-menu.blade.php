@@ -74,7 +74,7 @@
     }
 
     .language-dropdown-menu {
-        display: none;
+        display: block;
         position: absolute;
         top: 100%;
         left: 0;
@@ -84,10 +84,16 @@
         margin-top: 4px;
         z-index: 100;
         overflow: hidden;
+        opacity: 0;
+        transform: translateY(-8px) scaleY(0.95);
+        pointer-events: none;
+        transition: opacity 0.25s ease, transform 0.25s ease;
     }
 
     .language-dropdown-menu.is-open {
-        display: block;
+        opacity: 1;
+        transform: translateY(0) scaleY(1);
+        pointer-events: auto;
     }
 
     .language-dropdown-menu a {
