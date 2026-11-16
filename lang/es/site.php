@@ -65,6 +65,16 @@ return [
                 'alt' => 'Eyeliner Classic',
                 'text' => 'Tratamiento de eyeliner que crea una línea limpia y definida para realzar la forma natural de los ojos. Cada diseño se personaliza para complementar tus facciones y tu estilo, logrando un acabado atemporal y elegante.',
             ],
+            [
+                'name' => 'Manicura y Pedicura',
+                'price' => 'Desde 40 CHF',
+                'aria_label' => 'Servicio de Manicura y Pedicura',
+                'alt' => 'Manicura y Pedicura',
+                'text' => "Las uñas hermosas son importantes, pero para mí, unas uñas bien cuidadas y saludables son igual de importantes, si no más.\n\nPor eso trabajo con CND Shellac, una marca profesional que prioriza el cuidado de las uñas. Su fórmula está diseñada para respetar tus uñas naturales y se puede remover fácilmente en solo 5 minutos, sin necesidad de limar o dañar la uña natural.\n\nPorque las uñas hermosas también deben ser saludables🤍✨\n\nPRECIOS MANICURA:\n• Manicura básica - 40 CHF\n• Manicura con Shellac - 55 CHF\n• Manicura con remover (Shellac) y Shellac - 60 CHF\n\nPRECIOS PEDICURA:\n• Pedicura básica - 50 CHF\n• Pedicura con Shellac - 65 CHF\n• Pedicura con remover (Shellac) y Shellac - 70 CHF\n\nSERVICIOS ADICIONALES:\n• Otros tipos de semipermanente - más 10 CHF\n• Remover gel - 20 CHF",
+                'images' => [
+                    ['path' => 'resources/manicure.jpeg', 'label' => 'single_photo'],
+                ],
+            ],
         ],
     ],
 
