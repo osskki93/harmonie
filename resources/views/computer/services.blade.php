@@ -589,6 +589,11 @@
                 <div class="service-name top-left">{{ $services[3]['name'] }}</div>
             </button>
 
+            <button type="button" class="service-tile" aria-label="{{ $services[4]['aria_label'] }}" data-service-name="{{ $services[4]['name'] }}" data-service-price="{{ $services[4]['price'] }}" data-service-text="{{ $services[4]['text'] }}" data-service-image="{{ asset('images/manicure.jpeg') }}" data-service-image-alt="{{ $services[4]['alt'] }}">
+                <img src="{{ asset('images/manicure.jpeg') }}" alt="{{ $services[4]['alt'] }}" loading="lazy">
+                <div class="service-name bottom-left">{{ $services[4]['name'] }}</div>
+            </button>
+
             <button type="button" class="service-tile" aria-label="{{ __('site.services.consultation.aria_label') }}" data-service-name="{{ __('site.services.consultation.title') }}" data-service-price="30CHF" data-service-text="{{ __('site.services.consultation.text') }}" data-service-image="{{ asset('images/consultation_and_design.jpg') }}" data-service-image-alt="{{ __('site.services.consultation.alt') }}">
                 <img src="{{ asset('images/consultation_and_design.jpg') }}" alt="{{ __('site.services.consultation.alt') }}" loading="lazy">
                 <div class="service-name bottom-left">{{ __('site.services.consultation.title') }}</div>
