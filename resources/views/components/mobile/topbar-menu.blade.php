@@ -47,6 +47,26 @@
     .mobile-menu-language a.is-active {
         background: rgba(83, 37, 20, 0.08);
     }
+
+    .language-selector {
+        width: 48px;
+        height: 48px;
+        border: 0;
+        border-radius: 50%;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+        color: #532514;
+        background: rgba(250, 244, 232, 0.88);
+        box-shadow: 0 2px 5px rgba(83, 37, 20, 0.05);
+        cursor: pointer;
+    }
+
+    .language-selector .language-toggle-icon {
+        width: 21px;
+        height: 21px;
+    }
 </style>
 
 <header class="{{ $topbarClass }}">
@@ -58,7 +78,7 @@
         </div>
     @endif
 
-    <button type="button" class="{{ $toggleClass }}" data-menu-toggle aria-label="{{ $languageOnly ? __('site.nav.language') : __('site.mobile.open_menu') }}" aria-expanded="false" aria-controls="{{ $menuId }}">
+    <button type="button" class="{{ $toggleClass }}{{ $languageOnly ? ' language-selector' : '' }}" data-menu-toggle aria-label="{{ $languageOnly ? __('site.nav.language') : __('site.mobile.open_menu') }}" aria-expanded="false" aria-controls="{{ $menuId }}">
         @if($languageOnly)
             <svg class="language-toggle-icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
                 <circle cx="12" cy="12" r="9"/>

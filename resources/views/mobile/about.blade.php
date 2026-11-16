@@ -173,6 +173,16 @@
             display: block;
             margin: 0 auto 12px;
             border: 2px solid rgba(83, 37, 20, 0.08);
+            opacity: 0;
+            background: linear-gradient(110deg, rgba(250, 244, 232, 0.5) 20%, rgba(255, 250, 243, 0.95) 45%, rgba(250, 244, 232, 0.5) 70%);
+            background-size: 220% 100%;
+            animation: about-shimmer 1.35s linear infinite;
+            transition: opacity 420ms ease;
+        }
+
+        .about-photo.is-loaded {
+            opacity: 1;
+            animation: none;
         }
 
         .about-name {
@@ -220,6 +230,11 @@
             height: 24px;
             fill: currentColor;
             overflow: visible;
+        }
+
+        @keyframes about-shimmer {
+            0% { background-position: -220% 0; }
+            100% { background-position: 220% 0; }
         }
     </style>
 </head>
@@ -311,6 +326,21 @@
             document.addEventListener('keydown', (event) => {
                 if (event.key === 'Escape') {
                     setOpen(false);
+                }
+            });
+        })();
+    </script>
+
+    <script>
+        (() => {
+            document.querySelectorAll('.about-photo').forEach((image) => {
+                const markLoaded = () => image.classList.add('is-loaded');
+                const reveal = () => window.setTimeout(markLoaded, 450);
+                if (image.complete && image.naturalWidth > 0) {
+                    reveal();
+                } else {
+                    image.addEventListener('load', reveal, { once: true });
+                    image.addEventListener('error', reveal, { once: true });
                 }
             });
         })();

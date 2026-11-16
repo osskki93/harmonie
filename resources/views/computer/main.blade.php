@@ -804,6 +804,355 @@
             }
         }
 
+        .computer-page-home {
+            width: min(100% - 96px, 1440px);
+            height: 100svh;
+            min-height: 0;
+            margin: 0 auto;
+            padding: 28px 0 34px;
+            display: grid;
+            grid-template-rows: auto auto minmax(0, 1fr) auto;
+            gap: 28px;
+        }
+
+        .computer-page-home .mobile-topbar {
+            min-height: 54px;
+            display: grid;
+            grid-template-columns: 58px minmax(0, 1fr) 42px;
+            align-items: center;
+            gap: 24px;
+        }
+
+        .computer-page-home .brand-logo {
+            width: 58px;
+        }
+
+        .computer-page-home .menu-toggle {
+            margin-left: auto;
+        }
+
+        .computer-topbar-brand {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 0;
+        }
+
+        .computer-topbar-brand-title {
+            margin: 0;
+            font-size: clamp(42px, 5vw, 72px);
+            line-height: 0.9;
+            letter-spacing: 0.24em;
+            text-indent: 0.24em;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+
+        .computer-page-home .language-toggle {
+            width: 42px;
+            height: 42px;
+        }
+
+        .computer-page-home .language-toggle-icon {
+            width: 20px;
+            height: 20px;
+        }
+
+        .computer-page-hero {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .computer-page-brand {
+            margin: 0;
+            font-size: clamp(68px, 9vw, 132px);
+            line-height: 0.88;
+            letter-spacing: 0.24em;
+            text-indent: 0.24em;
+        }
+
+        .computer-page-tagline {
+            width: min(430px, 90%);
+            margin: clamp(34px, 6vh, 72px) 0 0;
+            font-size: clamp(34px, 4vw, 62px);
+            line-height: 1;
+            letter-spacing: 0.04em;
+            font-weight: 500;
+            text-wrap: balance;
+            white-space: pre-line;
+        }
+
+        .computer-page-navigation {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 18px;
+        }
+
+        .computer-page-link {
+            min-height: 96px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px 24px;
+            border-radius: 18px;
+            color: #532514;
+            background: rgba(255, 250, 243, 0.82);
+            box-shadow: 0 12px 28px rgba(83, 37, 20, 0.10);
+            font-size: clamp(25px, 2.3vw, 36px);
+            font-weight: 600;
+            text-align: center;
+            text-decoration: none;
+            transition: transform 180ms ease, background 180ms ease;
+        }
+
+        .computer-page-link:hover,
+        .computer-page-link:focus-visible {
+            background: #faf4e8;
+            outline: none;
+            transform: translateY(-3px);
+        }
+
+        .computer-page-contact {
+            display: flex;
+            justify-content: center;
+        }
+
+        .computer-page-contact .contact-actions {
+            width: auto;
+            gap: 28px;
+        }
+
+        .computer-page-contact .contact-icon-btn {
+            width: 62px;
+            height: 62px;
+        }
+
+        .computer-page-panels {
+            min-height: 0;
+            position: relative;
+        }
+
+        .computer-page-panel {
+            display: none;
+            height: 100%;
+            opacity: 0;
+            transform: translateY(8px);
+            transition: opacity 180ms ease, transform 180ms ease;
+        }
+
+        .computer-page-panel.is-active {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .computer-page-panel-home {
+            width: 100%;
+            height: 100%;
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .computer-page-panel-home.is-active {
+            display: flex;
+        }
+
+        .computer-page-panel-home .computer-page-brand {
+            width: 100%;
+            font-size: clamp(62px, 8vw, 118px);
+            text-align: center;
+        }
+
+        .computer-page-panel-home .computer-page-tagline {
+            width: min(430px, 90%);
+            margin-top: 34px;
+            text-align: center;
+        }
+
+        .computer-page-panel-home .computer-page-tagline span {
+            display: block;
+        }
+
+        .computer-services-grid {
+            height: 100%;
+            display: grid;
+            grid-template-columns: repeat(6, minmax(0, 1fr));
+            gap: 18px;
+            align-content: center;
+        }
+
+        .computer-service-card {
+            grid-column: span 2;
+            position: relative;
+            min-height: 180px;
+            overflow: hidden;
+            padding: 0;
+            border: 0;
+            border-radius: 22px;
+            color: #532514;
+            background: #faf4e8;
+            box-shadow: 0 16px 34px rgba(83, 37, 20, 0.12);
+            cursor: pointer;
+            font: inherit;
+        }
+
+        .computer-service-card:last-child {
+            grid-column: 4 / 6;
+        }
+
+        .computer-service-card:nth-child(4) {
+            grid-column: 2 / 4;
+        }
+
+        .computer-service-card img {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0;
+            transition: opacity 420ms ease;
+        }
+
+        .computer-service-card::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            z-index: 3;
+            background: linear-gradient(110deg, rgba(250, 244, 232, 0.5) 20%, rgba(255, 250, 243, 0.95) 45%, rgba(250, 244, 232, 0.5) 70%);
+            background-size: 220% 100%;
+            animation: about-shimmer 1.35s linear infinite;
+            transition: opacity 240ms ease;
+        }
+
+        .computer-service-card.is-loaded img {
+            opacity: 1;
+        }
+
+        .computer-service-card.is-loaded::before {
+            opacity: 0;
+            animation: none;
+        }
+
+        .computer-service-card::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(246, 239, 226, 0.86), rgba(246, 239, 226, 0.04) 68%);
+        }
+
+        .computer-service-card span {
+            position: absolute;
+            z-index: 4;
+            right: 16px;
+            bottom: 15px;
+            left: 16px;
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: clamp(22px, 2vw, 32px);
+            font-weight: 600;
+            text-align: left;
+        }
+
+        .computer-page-panel-content {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .computer-about-panel-single {
+            width: min(900px, 90%);
+            display: grid;
+            grid-template-columns: 250px minmax(0, 1fr);
+            gap: 48px;
+            align-items: center;
+            padding: 48px 58px;
+            border-radius: 30px;
+            background: rgba(255, 250, 243, 0.84);
+            box-shadow: 0 20px 48px rgba(83, 37, 20, 0.13);
+        }
+
+        .computer-about-panel-single img {
+            width: 230px;
+            height: 230px;
+            border-radius: 50%;
+            object-fit: cover;
+            object-position: center 26%;
+            opacity: 0;
+            background: linear-gradient(110deg, rgba(250, 244, 232, 0.5) 20%, rgba(255, 250, 243, 0.95) 45%, rgba(250, 244, 232, 0.5) 70%);
+            background-size: 220% 100%;
+            animation: about-shimmer 1.35s linear infinite;
+            transition: opacity 420ms ease;
+        }
+
+        .computer-about-panel-single img.is-loaded {
+            opacity: 1;
+            animation: none;
+        }
+
+        .computer-about-panel-single h2,
+        .computer-about-panel-single p {
+            margin-left: 0;
+            text-align: left;
+        }
+
+        .computer-about-panel-single h2 {
+            margin-top: 0;
+            font-size: 48px;
+        }
+
+        .computer-about-panel-single p {
+            font-size: 24px;
+            line-height: 1.25;
+        }
+
+        .computer-location-panel {
+            width: min(820px, 90%);
+            padding: 58px 70px;
+            border-radius: 30px;
+            background: rgba(255, 250, 243, 0.84);
+            box-shadow: 0 20px 48px rgba(83, 37, 20, 0.13);
+            text-align: center;
+        }
+
+        .computer-location-panel h2 {
+            margin: 0;
+            font-size: 54px;
+        }
+
+        .computer-location-panel .location-address {
+            margin-top: 26px;
+            font-size: 36px;
+            font-weight: 600;
+        }
+
+        .computer-location-panel p {
+            max-width: 650px;
+            margin: 22px auto 0;
+            font-size: 25px;
+            line-height: 1.3;
+        }
+
+        .computer-location-panel .location-map-link {
+            display: inline-block;
+            margin-top: 28px;
+            color: #532514;
+            font-size: 21px;
+            text-decoration: underline;
+            text-underline-offset: 5px;
+        }
+
+        @keyframes about-shimmer {
+            0% { background-position: -220% 0; }
+            100% { background-position: 220% 0; }
+        }
+
         .tablet-service-dialog {
             width: min(680px, calc(100vw - 80px));
             max-height: calc(100svh - 48px);
@@ -899,16 +1248,16 @@
     @php
         $currentPage = 'home';
         $serviceList = __('site.services.list');
-        $tabletServices = [
-            ['name' => $serviceList[0]['name'], 'price' => $serviceList[0]['price'], 'text' => $serviceList[0]['text'], 'image' => 'hairstrokes_after.png'],
-            ['name' => $serviceList[1]['name'], 'price' => $serviceList[1]['price'], 'text' => $serviceList[1]['text'], 'image' => 'magic_shading_after.png'],
-            ['name' => $serviceList[2]['name'], 'price' => $serviceList[2]['price'], 'text' => $serviceList[2]['text'], 'image' => 'soft_liner_1.png'],
-            ['name' => $serviceList[3]['name'], 'price' => $serviceList[3]['price'], 'text' => $serviceList[3]['text'], 'image' => 'eyeliner_classic_1.png'],
-            ['name' => __('site.services.consultation.title'), 'price' => '30CHF', 'text' => __('site.services.consultation.text'), 'image' => 'consultation_and_design.jpg'],
+        $computerServices = [
+            ['name' => $serviceList[0]['name'], 'image' => 'hairstrokes_after.png', 'price' => $serviceList[0]['price'], 'text' => $serviceList[0]['text']],
+            ['name' => $serviceList[1]['name'], 'image' => 'magic_shading_after.png', 'price' => $serviceList[1]['price'], 'text' => $serviceList[1]['text']],
+            ['name' => $serviceList[2]['name'], 'image' => 'soft_liner_1.png', 'price' => $serviceList[2]['price'], 'text' => $serviceList[2]['text']],
+            ['name' => $serviceList[3]['name'], 'image' => 'eyeliner_classic_1.png', 'price' => $serviceList[3]['price'], 'text' => $serviceList[3]['text']],
+            ['name' => __('site.services.consultation.title'), 'image' => 'consultation_and_design.jpg', 'price' => '30CHF', 'text' => __('site.services.consultation.text')],
         ];
     @endphp
 
-    <main class="mobile-main tablet-home computer-home">
+    <main class="computer-page-home">
         @include('components.mobile.topbar-menu', [
             'currentPage' => $currentPage,
             'menuId' => 'mobile-menu',
@@ -916,23 +1265,22 @@
             'menuClass' => 'mobile-menu',
             'toggleClass' => 'language-toggle',
             'languageOnly' => true,
+            'title' => strtoupper(__('site.brand.name')),
+            'titleWrapClass' => 'computer-topbar-brand',
+            'titleClass' => 'computer-topbar-brand-title',
         ])
 
-        <div class="computer-triptych">
-            <section class="computer-hero">
-                <div class="brand">
-                    <div class="brand-name">{{ strtoupper(__('site.brand.name')) }}</div>
-                </div>
+        @include('components.computer.page-tabs', ['currentPage' => $currentPage])
 
-                <div class="headline-wrap">
-                    <h1 class="headline">{{ __('site.home.headline_mobile') }}</h1>
-                </div>
+        <div class="computer-page-panels">
+            <section class="computer-page-panel computer-page-panel-home is-active" data-page-panel="home">
+                <h1 class="computer-page-tagline">{{ __('site.home.headline_pc') }}</h1>
             </section>
 
-            <section class="tablet-services computer-services" aria-label="{{ __('site.services.title') }}">
-                <div class="tablet-services-grid">
-                    @foreach($tabletServices as $service)
-                        <button type="button" class="tablet-service-tab" data-service-name="{{ $service['name'] }}" data-service-price="{{ $service['price'] }}" data-service-text="{{ $service['text'] }}" aria-label="{{ $service['name'] }}">
+            <section class="computer-page-panel" data-page-panel="services">
+                <div class="computer-services-grid">
+                    @foreach($computerServices as $service)
+                        <button type="button" class="computer-service-card" data-service-name="{{ $service['name'] }}" data-service-price="{{ $service['price'] }}" data-service-text="{{ $service['text'] }}">
                             <img src="{{ asset('images/'.$service['image']) }}" alt="{{ $service['name'] }}" loading="lazy">
                             <span>{{ $service['name'] }}</span>
                         </button>
@@ -940,23 +1288,36 @@
                 </div>
             </section>
 
-            <aside class="computer-aside">
-                <section class="computer-about-panel" aria-label="{{ __('site.about.mobile_card_label') }}">
-                <img class="tablet-about-photo" src="{{ asset('images/me.png') }}" alt="Maria" loading="lazy">
-                <div class="tablet-about-copy">
-                    <h2 class="tablet-about-title">{{ __('site.nav.about') }}</h2>
-                    <p class="tablet-about-text">{{ __('site.about.intro') }}</p>
-                    <p class="tablet-about-text">{{ __('site.about.mobile_text') }}</p>
+            <section class="computer-page-panel" data-page-panel="about">
+                <div class="computer-page-panel-content">
+                    <article class="computer-about-panel-single">
+                        <img class="about-photo" src="{{ asset('images/me.png') }}" alt="Maria" loading="lazy">
+                        <div>
+                            <h2>{{ __('site.nav.about') }}</h2>
+                            <p>{{ __('site.about.intro') }}</p>
+                            <p>{{ __('site.about.mobile_text') }}</p>
+                        </div>
+                    </article>
                 </div>
-                </section>
+            </section>
 
-                <section class="tablet-home-contacts">
-                    @include('components.mobile.contact-links', [
-                        'wrapperClass' => 'tablet-contact-actions',
-                    ])
-                </section>
-            </aside>
+            <section class="computer-page-panel" data-page-panel="location">
+                <div class="computer-page-panel-content">
+                    <article class="computer-location-panel">
+                        <h2>{{ __('site.location.heading') }}</h2>
+                        <p class="location-address">{{ __('site.location.address') }}</p>
+                        <p>{{ __('site.location.appointment_text') }}</p>
+                        <a class="location-map-link" href="{{ __('site.location.map_url') }}" target="_blank" rel="noopener noreferrer">{{ __('site.location.map_label') }}</a>
+                    </article>
+                </div>
+            </section>
         </div>
+
+        <section class="computer-page-contact">
+            @include('components.mobile.contact-links', [
+                'wrapperClass' => 'contact-actions',
+            ])
+        </section>
     </main>
 
     <dialog class="tablet-service-dialog" data-service-dialog>
@@ -1038,9 +1399,8 @@
             const price = document.querySelector('[data-dialog-price]');
             const text = document.querySelector('[data-dialog-text]');
             const close = document.querySelector('[data-dialog-close]');
-            const serviceCards = document.querySelectorAll('[data-service-name]');
 
-            serviceCards.forEach((card) => {
+            document.querySelectorAll('[data-service-name]').forEach((card) => {
                 card.addEventListener('click', () => {
                     title.textContent = card.dataset.serviceName || '';
                     price.textContent = card.dataset.servicePrice || '';
@@ -1054,6 +1414,32 @@
             dialog.addEventListener('click', (event) => {
                 if (event.target === dialog) {
                     dialog.close();
+                }
+            });
+        })();
+    </script>
+
+    <script>
+        (() => {
+            document.querySelectorAll('.about-photo').forEach((image) => {
+                const markLoaded = () => image.classList.add('is-loaded');
+                const reveal = () => window.setTimeout(markLoaded, 1200);
+                if (image.complete && image.naturalWidth > 0) {
+                    reveal();
+                } else {
+                    image.addEventListener('load', reveal, { once: true });
+                    image.addEventListener('error', reveal, { once: true });
+                }
+            });
+
+            document.querySelectorAll('.computer-service-card').forEach((card) => {
+                const image = card.querySelector('img');
+                const reveal = () => window.setTimeout(() => card.classList.add('is-loaded'), 1200);
+                if (image && image.complete && image.naturalWidth > 0) {
+                    reveal();
+                } else if (image) {
+                    image.addEventListener('load', reveal, { once: true });
+                    image.addEventListener('error', reveal, { once: true });
                 }
             });
         })();

@@ -173,6 +173,16 @@
             display: block;
             margin: 0 auto 12px;
             border: 2px solid rgba(83, 37, 20, 0.08);
+            opacity: 0;
+            background: linear-gradient(110deg, rgba(250, 244, 232, 0.5) 20%, rgba(255, 250, 243, 0.95) 45%, rgba(250, 244, 232, 0.5) 70%);
+            background-size: 220% 100%;
+            animation: about-shimmer 1.35s linear infinite;
+            transition: opacity 420ms ease;
+        }
+
+        .about-photo.is-loaded {
+            opacity: 1;
+            animation: none;
         }
 
         .about-name {
@@ -222,6 +232,11 @@
             overflow: visible;
         }
 
+        @keyframes about-shimmer {
+            0% { background-position: -220% 0; }
+            100% { background-position: 220% 0; }
+        }
+
         @media (min-width: 1024px) and (orientation: landscape) {
             body {
                 overflow: hidden;
@@ -248,6 +263,59 @@
                 width: 132px;
                 height: 132px;
             }
+
+            .about-topbar {
+                position: relative;
+            }
+
+            .about-card-wrap {
+                min-height: calc(100svh - 96px);
+                padding: 30px 0;
+            }
+
+            .about-card {
+                width: min(980px, 100%);
+                display: grid;
+                grid-template-columns: 280px minmax(0, 1fr);
+                grid-template-rows: auto auto auto auto;
+                column-gap: 54px;
+                align-items: center;
+                padding: 52px 64px;
+                text-align: left;
+                border-radius: 30px;
+                box-shadow: 0 20px 48px rgba(83, 37, 20, 0.13);
+            }
+
+            .about-photo {
+                width: 250px;
+                height: 250px;
+                grid-column: 1;
+                grid-row: 1 / 5;
+                margin: 0;
+            }
+
+            .about-name,
+            .about-text {
+                grid-column: 2;
+            }
+
+            .about-name {
+                font-size: 48px;
+            }
+
+            .about-text {
+                max-width: 560px;
+                font-size: 25px;
+                line-height: 1.28;
+            }
+
+            .about-title {
+                font-size: clamp(44px, 5vw, 68px);
+            }
+
+            .about-topbar .brand-logo {
+                width: 58px;
+            }
         }
     </style>
 </head>
@@ -263,10 +331,13 @@
             'topbarClass' => 'about-topbar',
             'menuClass' => 'mobile-menu',
             'toggleClass' => 'menu-toggle',
+            'languageOnly' => true,
             'title' => __('site.nav.about'),
             'titleWrapClass' => 'about-title-wrap',
             'titleClass' => 'about-title',
         ])
+
+        @include('components.computer.page-tabs', ['currentPage' => $currentPage])
 
         <section class="about-card-wrap">
             <article class="about-card" aria-label="{{ __('site.about.mobile_card_label') }}">
@@ -339,6 +410,21 @@
             document.addEventListener('keydown', (event) => {
                 if (event.key === 'Escape') {
                     setOpen(false);
+                }
+            });
+        })();
+    </script>
+
+    <script>
+        (() => {
+            document.querySelectorAll('.about-photo').forEach((image) => {
+                const markLoaded = () => image.classList.add('is-loaded');
+                const reveal = () => window.setTimeout(markLoaded, 1200);
+                if (image.complete && image.naturalWidth > 0) {
+                    reveal();
+                } else {
+                    image.addEventListener('load', reveal, { once: true });
+                    image.addEventListener('error', reveal, { once: true });
                 }
             });
         })();

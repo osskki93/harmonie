@@ -26,6 +26,7 @@ return [
     'home' => [
         'headline' => 'HARMONIE - Much more than permanent make-up',
         'headline_mobile' => 'Enhance your natural beauty',
+        'headline_pc' => 'Enhance'.PHP_EOL.'your natural'.PHP_EOL.'beauty',
         'paragraph_1' => 'It is not about changing your features. It is about finding the right way to enhance them, bringing harmony, definition and balance while keeping you, you.',
         'paragraph_2' => 'My approach is always honest. I take the time to listen, understand what you are looking for, and guide you through the process. If I think a treatment is not right for you, I will tell you. Your comfort, trust and safety always come first.',
         'cta_primary' => 'WhatsApp',

@@ -452,6 +452,99 @@
             .service-name {
                 font-size: clamp(28px, 2.5vw, 42px);
             }
+
+            .services-main {
+                width: min(100% - 96px, 1440px);
+                margin: 0 auto;
+                padding: 28px 0 36px;
+            }
+
+            .services-topbar {
+                position: relative;
+                padding: 0;
+                background: transparent;
+                backdrop-filter: none;
+            }
+
+            .services-topbar::after {
+                display: none;
+            }
+
+            .services-stack {
+                width: 100%;
+                margin-top: 52px;
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+                gap: 22px;
+            }
+
+            .services-stack .service-tile:nth-child(4) {
+                grid-column: 1 / 2;
+                margin-left: 50%;
+                width: 100%;
+            }
+
+            .services-stack .service-tile:nth-child(5) {
+                grid-column: 3 / 4;
+                margin-right: 50%;
+                width: 100%;
+            }
+
+            .computer-page-tabs {
+                display: flex;
+                justify-content: center;
+                gap: 10px;
+                margin-top: 30px;
+            }
+
+            .computer-page-tab {
+                padding: 10px 18px;
+                border-radius: 999px;
+                color: #532514;
+                font-size: 20px;
+                font-weight: 600;
+                text-decoration: none;
+                background: rgba(255, 250, 243, 0.66);
+            }
+
+            .computer-page-tab.is-active,
+            .computer-page-tab:hover,
+            .computer-page-tab:focus-visible {
+                background: #faf4e8;
+                outline: none;
+            }
+
+            .service-tile,
+            .service-tile:last-child {
+                min-height: clamp(240px, 34vh, 380px);
+                border-radius: 26px;
+                box-shadow: 0 18px 38px rgba(83, 37, 20, 0.13);
+            }
+
+            .service-tile:last-child {
+                grid-column: auto;
+            }
+
+            .service-name {
+                padding: 20px 22px !important;
+                font-size: clamp(28px, 2.2vw, 40px);
+            }
+
+            .services-title {
+                font-size: clamp(44px, 5vw, 68px);
+                letter-spacing: 0.04em;
+            }
+
+            .services-topbar .brand-logo {
+                width: 58px;
+            }
+
+            .service-dialog {
+                width: min(700px, 80vw);
+            }
+
+            .service-dialog-inner {
+                padding: 34px 42px;
+            }
         }
     </style>
 </head>
@@ -468,10 +561,12 @@
             'topbarClass' => 'services-topbar',
             'menuClass' => 'services-mobile-menu',
             'toggleClass' => 'services-menu-toggle',
+            'languageOnly' => true,
             'title' => __('site.nav.services'),
             'titleWrapClass' => 'services-title-wrap',
             'titleClass' => 'services-title',
         ])
+        @include('components.computer.page-tabs', ['currentPage' => $currentPage])
 
         <section class="services-stack" aria-label="Services list">
             <button type="button" class="service-tile" aria-label="{{ $services[0]['aria_label'] }}" data-service-name="{{ $services[0]['name'] }}" data-service-price="{{ $services[0]['price'] }}" data-service-text="{{ $services[0]['text'] }}" data-service-image="{{ asset('images/hairstrokes_after.png') }}" data-service-image-alt="{{ $services[0]['alt'] }}">
@@ -596,10 +691,10 @@
                 const image = tile.querySelector('img');
                 if (image) {
                     if (image.complete && image.naturalWidth > 0) {
-                        markImageLoaded(tile);
+                        window.setTimeout(() => markImageLoaded(tile), 1200);
                     } else {
-                        image.addEventListener('load', () => markImageLoaded(tile), { once: true });
-                        image.addEventListener('error', () => markImageLoaded(tile), { once: true });
+                        image.addEventListener('load', () => window.setTimeout(() => markImageLoaded(tile), 1200), { once: true });
+                        image.addEventListener('error', () => window.setTimeout(() => markImageLoaded(tile), 1200), { once: true });
                     }
                 }
 

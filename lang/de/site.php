@@ -26,6 +26,7 @@ return [
     'home' => [
         'headline' => 'Harmonie - Viel mehr als Permanent Make-up',
         'headline_mobile' => 'Unterstreiche deine naturliche Schonheit',
+        'headline_pc' => 'Unterstreiche'.PHP_EOL.'deine naturliche'.PHP_EOL.'Schonheit',
         'paragraph_1' => 'Es geht nicht darum, deine Zuge zu verandern. Es geht darum, sie auf die richtige Weise zu betonen - mit Harmonie, Definition und Balance, ohne dass du dich selbst verlierst.',
         'paragraph_2' => 'Mein Ansatz ist immer ehrlich. Ich nehme mir Zeit, dir zuzuhoren, deine Wunsche zu verstehen und dich durch den gesamten Prozess zu begleiten. Wenn ich denke, dass eine Behandlung nicht zu dir passt, sage ich es dir offen. Dein Wohlgefuhl, dein Vertrauen und deine Sicherheit stehen immer an erster Stelle.',
         'cta_primary' => 'WhatsApp',

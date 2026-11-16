@@ -259,6 +259,53 @@
                 width: 132px;
                 height: 132px;
             }
+
+            .about-topbar {
+                position: relative;
+            }
+
+            .about-card-wrap {
+                min-height: calc(100svh - 96px);
+                padding: 30px 0;
+            }
+
+            .about-card {
+                width: min(900px, 100%);
+                padding: 64px 88px;
+                text-align: center;
+                border-radius: 30px;
+                box-shadow: 0 20px 48px rgba(83, 37, 20, 0.13);
+            }
+
+            .about-name {
+                font-size: 56px;
+            }
+
+            .about-text {
+                max-width: 680px;
+                margin-left: auto;
+                margin-right: auto;
+                font-size: 28px;
+                line-height: 1.3;
+            }
+
+            .location-address {
+                margin-top: 28px;
+                font-size: 36px;
+            }
+
+            .location-map-link {
+                margin-top: 28px;
+                font-size: 22px;
+            }
+
+            .about-title {
+                font-size: clamp(44px, 5vw, 68px);
+            }
+
+            .about-topbar .brand-logo {
+                width: 58px;
+            }
         }
     </style>
 </head>
@@ -274,10 +321,13 @@
             'topbarClass' => 'about-topbar',
             'menuClass' => 'mobile-menu',
             'toggleClass' => 'menu-toggle',
+            'languageOnly' => true,
             'title' => __('site.nav.location'),
             'titleWrapClass' => 'about-title-wrap',
             'titleClass' => 'about-title',
         ])
+
+        @include('components.computer.page-tabs', ['currentPage' => $currentPage])
 
         <section class="about-card-wrap">
             <article class="about-card" aria-label="{{ __('site.location.card_label') }}">

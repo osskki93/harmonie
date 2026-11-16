@@ -18,6 +18,7 @@ return [
 
     'home' => [
         'headline_mobile' => 'Valorizza la tua bellezza naturale',
+        'headline_pc' => 'Valorizza'.PHP_EOL.'la tua bellezza'.PHP_EOL.'naturale',
     ],
 
     'about' => [

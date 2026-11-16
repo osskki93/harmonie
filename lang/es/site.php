@@ -18,6 +18,7 @@ return [
 
     'home' => [
         'headline_mobile' => 'Realza tu belleza natural',
+        'headline_pc' => 'Realza'.PHP_EOL.'tu belleza'.PHP_EOL.'natural',
     ],
 
     'about' => [
