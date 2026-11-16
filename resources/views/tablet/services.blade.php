@@ -295,7 +295,7 @@
             text-align: center;
             padding: 12px;
             font-family: 'Playfair Display', Georgia, serif;
-            font-size: 36px;
+            font-size: 28px;
             font-weight: 600;
             letter-spacing: 0.02em;
             line-height: 1;

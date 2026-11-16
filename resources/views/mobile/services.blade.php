@@ -295,7 +295,7 @@
             text-align: center;
             padding: 12px;
             font-family: 'Playfair Display', Georgia, serif;
-            font-size: 36px;
+            font-size: 28px;
             font-weight: 600;
             letter-spacing: 0.02em;
             line-height: 1;
@@ -585,7 +585,7 @@
 
             <button type="button" class="service-tile" aria-label="{{ __('site.services.consultation.aria_label') }}" data-service-name="{{ __('site.services.consultation.title') }}" data-service-price="30CHF" data-service-text="{{ __('site.services.consultation.text') }}" data-service-image="{{ asset('images/consultation_and_design.jpg') }}" data-service-image-alt="{{ __('site.services.consultation.alt') }}">
                 <img src="{{ asset('images/consultation_and_design.jpg') }}" alt="{{ __('site.services.consultation.alt') }}" loading="lazy">
-                <div class="service-name bottom-left">{{ __('site.services.consultation.title') }}</div>
+                <div class="service-name top-left">{{ __('site.services.consultation.title') }}</div>
             </button>
         </section>
     </main>
