@@ -32,20 +32,90 @@
 
 <style>
     .mobile-menu-language {
-        margin-top: 8px;
-        padding-top: 8px;
-        border-top: 1px solid rgba(83, 37, 20, 0.10);
+        padding-top: 16px;
+        margin-top: 0;
     }
 
-    .mobile-menu-language a {
+    .language-dropdown-wrapper {
+        position: relative;
+        width: 100%;
+    }
+
+    .language-dropdown-toggle {
+        width: 100%;
+        padding: 12px 0;
+        border: none;
+        background: transparent;
+        color: #532514;
         font-size: 18px;
-        line-height: 1;
         font-weight: 500;
-        opacity: 0.92;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        cursor: pointer;
+        font-family: inherit;
+        outline: none;
+        -webkit-tap-highlight-color: transparent;
     }
 
-    .mobile-menu-language a.is-active {
+    .language-dropdown-toggle::after {
+        content: '';
+        width: 6px;
+        height: 6px;
+        border-right: 1.5px solid currentColor;
+        border-bottom: 1.5px solid currentColor;
+        transform: rotate(-45deg);
+        margin-left: 8px;
+        transition: transform 0.2s ease;
+    }
+
+    .language-dropdown-toggle.is-open::after {
+        transform: rotate(135deg);
+    }
+
+    .language-dropdown-menu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: rgba(250, 244, 232, 0.95);
+        border-radius: 8px;
+        margin-top: 4px;
+        box-shadow: 0 4px 12px rgba(83, 37, 20, 0.1);
+        z-index: 100;
+        overflow: hidden;
+    }
+
+    .language-dropdown-menu.is-open {
+        display: block;
+    }
+
+    .language-dropdown-menu a {
+        display: block;
+        padding: 12px 16px;
+        color: #532514;
+        font-size: 16px;
+        font-weight: 500;
+        text-decoration: none;
+        border-bottom: 1px solid rgba(83, 37, 20, 0.08);
+        opacity: 0.85;
+        transition: all 0.15s ease;
+    }
+
+    .language-dropdown-menu a:last-child {
+        border-bottom: none;
+    }
+
+    .language-dropdown-menu a:active {
+        opacity: 1;
         background: rgba(83, 37, 20, 0.08);
+    }
+
+    .language-dropdown-menu a.is-active {
+        opacity: 1;
+        background: rgba(83, 37, 20, 0.12);
+        font-weight: 600;
     }
 
     .language-selector {
@@ -101,15 +171,53 @@
     @endunless
 
     <div class="mobile-menu-language">
-        @foreach($languageLinks as $locale => $label)
-            <a
-                href="{{ route('language.switch', $locale) }}"
-                data-menu-link
-                data-menu-target="language-{{ $locale }}"
-                class="{{ $locale === $currentLocale ? 'is-active' : '' }}"
-            >
-                {{ $label }}
-            </a>
-        @endforeach
+        <div class="language-dropdown-wrapper">
+            <button type="button" class="language-dropdown-toggle" data-language-dropdown-toggle aria-label="{{ __('site.nav.language') }}" aria-expanded="false" aria-haspopup="true">
+                <span data-language-current>{{ $languageLinks[$currentLocale] }}</span>
+            </button>
+            <div class="language-dropdown-menu" data-language-dropdown-menu>
+                @foreach($languageLinks as $locale => $label)
+                    <a
+                        href="{{ route('language.switch', $locale) }}"
+                        data-language-option
+                        class="{{ $locale === $currentLocale ? 'is-active' : '' }}"
+                    >
+                        {{ $label }}
+                    </a>
+                @endforeach
+            </div>
+        </div>
     </div>
 </nav>
+
+<script>
+    (() => {
+        const languageToggle = document.querySelector('[data-language-dropdown-toggle]');
+        const languageMenu = document.querySelector('[data-language-dropdown-menu]');
+
+        if (languageToggle && languageMenu) {
+            languageToggle.addEventListener('click', () => {
+                const isOpen = languageMenu.classList.contains('is-open');
+                languageMenu.classList.toggle('is-open');
+                languageToggle.classList.toggle('is-open');
+                languageToggle.setAttribute('aria-expanded', !isOpen);
+            });
+
+            languageMenu.querySelectorAll('[data-language-option]').forEach(option => {
+                option.addEventListener('click', (e) => {
+                    languageMenu.classList.remove('is-open');
+                    languageToggle.classList.remove('is-open');
+                    languageToggle.setAttribute('aria-expanded', 'false');
+                });
+            });
+
+            document.addEventListener('click', (e) => {
+                if (!e.target.closest('[data-language-dropdown-wrapper]') && !e.target.closest('.language-dropdown-wrapper')) {
+                    languageMenu.classList.remove('is-open');
+                    languageToggle.classList.remove('is-open');
+                    languageToggle.setAttribute('aria-expanded', 'false');
+                }
+            });
+        }
+    })();
+</script>
