@@ -79,7 +79,7 @@
         top: 100%;
         left: 0;
         right: 0;
-        background: rgba(83, 37, 20, 0.15);
+        background: #3d1c0f;
         border-radius: 8px;
         margin-top: 4px;
         z-index: 100;
@@ -93,12 +93,12 @@
     .language-dropdown-menu a {
         display: block;
         padding: 12px 16px;
-        color: #532514;
+        color: #faf4e8;
         font-size: 16px;
         font-weight: 500;
         text-decoration: none;
         border-bottom: none;
-        opacity: 0.85;
+        opacity: 0.9;
         transition: all 0.15s ease;
     }
 
