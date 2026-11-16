@@ -70,7 +70,7 @@ return [
                 'price' => 'Da 40 CHF',
                 'aria_label' => 'Servizio di Manicure e Pedicure',
                 'alt' => 'Manicure e Pedicure',
-                'text' => "Le unghie belle sono importanti, ma per me, le unghie ben curate e sane sono altrettanto importanti, se non di più.\n\nPer questo lavoro con CND Shellac, un marchio professionale che mette la cura delle unghie al primo posto. La sua formula è progettata per rispettare le tue unghie naturali e può essere facilmente rimossa in soli 5 minuti, senza la necessità di limare o danneggiare l'unghia naturale.\n\nPerché le unghie belle dovrebbero anche essere unghie sane🤍✨\n\nPREZZI MANICURE:\n• Manicure base - 40 CHF\n• Manicure con Shellac - 55 CHF\n• Manicure con remover (Shellac) e Shellac - 60 CHF\n\nPREZZI PEDICURE:\n• Pedicure base - 50 CHF\n• Pedicure con Shellac - 65 CHF\n• Pedicure con remover (Shellac) e Shellac - 70 CHF\n\nSERVIZI AGGIUNTIVI:\n• Altri tipi di semipermanente - più 10 CHF\n• Rimozione gel - 20 CHF",
+                'text' => "Le unghie belle sono importanti, ma per me, le unghie ben curate e sane sono altrettanto importanti, se non di più.\n\nPer questo lavoro con CND Shellac, un marchio professionale che mette la cura delle unghie al primo posto. La sua formula è progettata per rispettare le tue unghie naturali e può essere facilmente rimossa in soli 5 minuti, senza la necessità di limare o danneggiare l'unghia naturale.\n\nPerché le unghie belle dovrebbero anche essere unghie sane🤍✨",
                 'images' => [
                     ['path' => 'resources/manicure.jpeg', 'label' => 'single_photo'],
                 ],

@@ -435,7 +435,8 @@
         }
 
         .manicure-dialog-view.active {
-            display: block;
+            display: flex;
+            flex-direction: column;
         }
 
         .manicure-view-description {

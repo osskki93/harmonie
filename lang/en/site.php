@@ -159,7 +159,7 @@ return [
                 'price' => 'From 40 CHF',
                 'aria_label' => 'Manicure and Pedicure service',
                 'alt' => 'Manicure and Pedicure',
-                'text' => "Beautiful nails are important, but to me, well-cared-for and healthy nails are just as important — if not more.\n\nThat's why I work with CND Shellac, a professional brand that puts nail care first. Its formula is designed to respect your natural nails and can be easily removed in just 5 minutes, without the need to file or damage the natural nail.\n\nBecause beautiful nails should also be healthy nails🤍✨\n\nMANICURE PRICES:\n• Basic manicure - 40 CHF\n• Manicure with Shellac - 55 CHF\n• Manicure with removal (Shellac) and Shellac - 60 CHF\n\nPEDICURE PRICES:\n• Basic pedicure - 50 CHF\n• Pedicure with Shellac - 65 CHF\n• Pedicure with removal (Shellac) and Shellac - 70 CHF\n\nADDITIONAL SERVICES:\n• Other types of semipermanent - plus 10 CHF\n• Gel removal - 20 CHF",
+                'text' => "Beautiful nails are important, but to me, well-cared-for and healthy nails are just as important — if not more.\n\nThat's why I work with CND Shellac, a professional brand that puts nail care first. Its formula is designed to respect your natural nails and can be easily removed in just 5 minutes, without the need to file or damage the natural nail.\n\nBecause beautiful nails should also be healthy nails🤍✨",
                 'images' => [
                     ['path' => 'resources/manicure.jpeg', 'label' => 'single_photo'],
                 ],
